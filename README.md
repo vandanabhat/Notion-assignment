@@ -1,15 +1,36 @@
-# NotionAssignment
+1. NotionAssignment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4 and used RxJS to manage the state.
 
-## Development server
+2. Prerequisites
+    This application requires npm. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    npm install npm@latest -g 
 
-## Build
+3. Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+    1. clone the repo
+        git clone https://github.com/vandanabhat/Notion-assignment.git
+    2. Install npm packages
+        npm install
+    3. Run build
+        ng serve -o
+    4. opens `http://localhost:4200/` in the default browser        
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+4. Usage
+    
+   Type the text in input box. It will filter the list of universities based on search text. It searches for whole string.
+
+   Example: University --> will featch result.
+
+                   Uni --> No result
+
+
+5. Directory structure
+ 
+  app.componenet is the main component, entry point. 
+
+  data-grid has two childrens, data-card and search.
+

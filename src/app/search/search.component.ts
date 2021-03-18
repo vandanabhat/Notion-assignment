@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  public searchText: string = '';
+  public searchText = '';
 
   @Output() searchEmit = new EventEmitter();
 
@@ -17,6 +17,7 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
   onSearchUni($event: any): void {
+    // emit search event
     this.searchEmit.emit(this.searchText);
   }
 }
