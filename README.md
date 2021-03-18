@@ -9,11 +9,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 3. Installation
 
-    1. clone the repo
+    1. clone the repo - 
         git clone https://github.com/vandanabhat/Notion-assignment.git
-    2. Install npm packages
+    2. Install npm packages -
         npm install
-    3. Run build
+    3. Run build -
         ng serve -o
     4. opens `http://localhost:4200/` in the default browser        
 
