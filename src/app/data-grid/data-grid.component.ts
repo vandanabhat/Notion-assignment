@@ -10,14 +10,15 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 })
 export class DataGridComponent implements OnInit {
   public uniDataList: any[] = [];
-  private dataListAll: any;
+  private dataListAll: any[] = [];
   private dataHeader: any;
+  noDataMessage = 'No Result';
   searchChange: Subject<string> = new Subject<string>();
 
   constructor(private uniDataService: UniDataService) {
     // subscribe to search event
     this.searchChange.pipe(
-      debounceTime(600), // wait 600ms after the last event before emitting last event
+      debounceTime(400), // wait 400ms after the last event before emitting last event
        distinctUntilChanged()  // only emit if value is different from previous value
     )
     .subscribe((searchText: string) => this.filterSearch(searchText));
@@ -25,11 +26,16 @@ export class DataGridComponent implements OnInit {
 
   ngOnInit(): void {
     // get data on init
-    this.uniDataService.getUniData().subscribe((data: any) => {
-      this.dataListAll = data.split('\n');
-      this.dataHeader = this.dataListAll.shift().split(',');
-      this.uniDataList = this.indexUniData(this.dataListAll);
-    });
+    this.uniDataService.getUniData().subscribe(
+      (data: any) => {
+        this.dataListAll = data.split('\n');
+        this.dataHeader = this.dataListAll.shift().split(',');
+        this.uniDataList = this.indexUniData(this.dataListAll);
+      },
+      (err: any) => {
+        console.error(err);
+        this.noDataMessage = err.error;
+      });
   }
 
   onSearch(searchText: any): void {

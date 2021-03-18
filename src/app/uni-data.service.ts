@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 import { environment } from '../environments/environment';
 import { catchError, map, tap } from 'rxjs/operators';
 
@@ -12,13 +12,14 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class UniDataService {
   constructor(private http: HttpClient) { }
 
-  //get university data
+  // get university data
 
   public getUniData(): Observable<any> {
     const url = environment.uniURL;
     return this.http.get(url, { responseType: 'text'})
     .pipe(
-      tap( data => data)
+      tap( data => data),
+      catchError(err => throwError(err))
     );
     }
 }
