@@ -1,0 +1,12 @@
+<div class="search-wrapper">
+    <form>
+        <input type="search" 
+                name="search-uni" 
+                placeholder="Search..." 
+                class="search-uni" 
+                value=""
+                [(ngModel)]="searchText"
+                (search)="onSearchUni($event)"
+                (keyup)="onSearchUni($event)">
+    </form>
+</div>

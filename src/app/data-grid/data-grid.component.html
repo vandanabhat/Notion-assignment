@@ -1,0 +1,12 @@
+<div class="uni-list-wrapper">
+    <app-search (searchEmit)="onSearch($event)"></app-search>
+    <div class="data-card-wrapper" *ngIf="uniDataList.length > 0; else noResult">
+        <div class="card-holder" 
+            *ngFor="let item of uniDataList;">
+            <app-data-card [uniData]="item"></app-data-card>
+        </div>
+    </div>
+    <ng-template #noResult>
+        <div class="no-resulr-wrapper">No Result</div>
+    </ng-template> 
+</div>

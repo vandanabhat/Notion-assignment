@@ -1,0 +1,32 @@
+.uni-card {
+    padding: 16px;
+    margin: 6% 0;
+    border-radius: 5px;
+    box-shadow: 1px 4px 8px #e1dfdf, 2px 2px 4px #dedcdc;
+    line-height: 1.6rem; 
+    .city {
+        color: grey;
+        font-size: 0.8rem;
+        .state {
+            &:before {
+                content: "\00B7";
+                padding-right: 5px;
+                font-size: 13px;
+                font-weight: bolder;
+            }
+        }
+    }
+    .name {
+        font-size: 1.1rem;
+        font-weight: 600;   
+    }
+    a {
+        color: rgb(235, 103, 103);
+        text-decoration: none;
+        font-weight: 100;
+        display: block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 1rem;
+    }
+}

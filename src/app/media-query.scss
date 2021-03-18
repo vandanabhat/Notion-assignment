@@ -1,0 +1,36 @@
+/* Medium screens */
+@media all and (max-width: 800px) {
+  :root {
+    font-size: 8px;
+    --layout-sides-padding: 20px !important;
+
+  }  
+  header.header-container > nav {
+      justify-content: space-around;
+    }
+    .uni-image > img { 
+      width: 200px !important;
+      height: 200px !important;
+    }
+    #main-container-id {
+      .uni-list-wrapper > .data-card-wrapper {
+        justify-content: space-around;
+      }
+      .search-wrapper {
+        text-align: center;
+      }
+    }
+
+  }
+  
+  /* Small screens */
+  @media all and (max-width: 500px) {
+    :root {
+      font-size: 8px;
+      --layout-sides-padding: 20px !important;
+    }  
+    header.header-container > nav {
+      flex-direction: column;
+    }
+  }
+  
